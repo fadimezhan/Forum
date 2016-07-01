@@ -1,11 +1,21 @@
 !!!
 %html
   %head
-    %title
-      = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-      = javascript_include_tag 'application', 'data-turbolinks-track' => true
-      = csrf_meta_tags
+    %title Fadime Forum
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    %link{rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Poiret+One', type:'text/css'}
+    %link{rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css', type:'text/css'}
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
   %body
-    %p.notice= notice
-    %p.alert= alert
-    =yield
+    %header.main_header.clearfix
+      .wrapper
+        #logo
+          %p Fadime's Rails Forum
+        #buttons
+          =link_to "New Post", new_post_path
+    .wrapper
+      %p.notice= notice
+      %p.alert= alert
+    .wrapper
+      =yield

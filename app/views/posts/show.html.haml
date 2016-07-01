@@ -1,6 +1,16 @@
-%h1= @post.title
-%h2= @post.content
+#post_content
+  %h1= @post.title
+  %h2= @post.content
 
-=link_to "Back", root_path
-=link_to "Edit", edit_post_path(@post)
-=link_to "Delete", post_path(@post), method: :delete, data: {confirm: " Are you sure? "}
+  #comments
+    %h3= @post.comments.count
+    = render @post.comments
+
+    %h4 Reply to thread
+    =render 'comments/form'
+
+
+  =link_to "Back", root_path
+  -if user_signed_in?
+    =link_to "Edit", edit_post_path(@post)
+    =link_to "Delete", post_path(@post), method: :delete, data: {confirm: " Are you sure? "}

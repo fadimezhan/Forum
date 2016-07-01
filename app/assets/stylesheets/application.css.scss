@@ -45,11 +45,13 @@ body {
   background: linear-gradient(to left, #CCCCB2 , #757519); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   #logo {
     float: left;
-    p {
+    a {
       text-transform: uppercase;
       font-weight: 700;
       letter-spacing: -1px;
       font-size: 30px;
+      text-decoration: none;
+      color: black;
     }
   }
   #buttons {
@@ -86,5 +88,26 @@ body {
       margin-top: .25rem;
       font-size: 1.15rem;
     }
+  }
+}
+
+#post_content {
+  padding: 2em 5%;
+  border-radius: .5em;
+  a {
+    color: indigo;
+  }
+
+  h1 {
+    color: indigo;
+    font-size: 3em;
+    font-weight: 100;
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: 25px;
+    font-weight: 100;
+    line-height: 1.5;
   }
 }
